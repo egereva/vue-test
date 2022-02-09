@@ -1,18 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    {{ counter }}
+    <button @click="counter +=1">+</button>
+    <button @click="counter -=1">-</button>
+    <button v-if="counter < 0" @click="counter = 0">Reset</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
   name: "App",
-  components: {
-    HelloWorld,
-  },
+  components: {},
+  data () {
+    return {
+      counter: 0
+    }
+  }
 };
 </script>
 
